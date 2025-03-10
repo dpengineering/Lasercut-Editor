@@ -1,0 +1,34 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(206, 241, 230);
+}
+
+#canvas {
+  background-color: white;
+  display: inline-block;
+}
+
+#exportButton {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: .4rem;
+  padding: .4rem .8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color .25s;
+}
+
+.icon {
+  height: auto; 
+    width: auto; 
+    max-width: 40px; 
+    max-height: 40px;
+
+}
