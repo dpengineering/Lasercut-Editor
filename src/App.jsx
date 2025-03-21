@@ -214,7 +214,7 @@ function App() {
           {shapes.map((shape, i) => {
             const x = shape.params[0];
             const y = shape.params[1];
-            const r = 0.05;
+            const r = 0.06; // size of the center point
             return (
               <g
                 key={i}
