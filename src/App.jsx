@@ -33,30 +33,6 @@ const renderSquare = (x, y, width, height, fillet_radius) => {
   );
 };
 
-// const renderPlus = (x, y,height, fillet_radius) => {
-//   return (
-//     <g transform={`translate(${x - width / 2}, ${y - height / 2})`}>
-//       <path
-//         stroke="red"
-//         fill="none"
-//         d={`
-//           M ${fillet_radius} 0 
-//           H ${width - fillet_radius} 
-//           A ${fillet_radius} ${fillet_radius} 0 0 1 ${width} ${fillet_radius} 
-//           V ${height - fillet_radius}
-//           A ${fillet_radius} ${fillet_radius} 0 0 1 ${
-//           width - fillet_radius
-//         } ${height} 
-//           H ${fillet_radius} 
-//           A ${fillet_radius} ${fillet_radius} 0 0 1 0 ${height - fillet_radius} 
-//           V ${fillet_radius} 
-//           A ${fillet_radius} ${fillet_radius} 0 0 1 ${fillet_radius} 0
-//           Z`}
-//       />
-//     </g>
-//   );
-// };
-
 const renderCircle = (x, y, radius) => {
   return <circle cx={x} cy={y} r={radius} stroke="red" fill="none" />;
 };
