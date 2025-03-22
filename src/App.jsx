@@ -9,6 +9,9 @@ const DPI = 96;
 const DEFAULT_WIDTH = 6; // inches
 const DEFAULT_HEIGHT = 4; // inches
 
+const GRID_COLOR = "lightgrey";
+const GRID_UNIT = 1; // 1 inch
+
 const renderSquare = (x, y, width, height, fillet_radius) => {
   return (
     <g transform={`translate(${x - width / 2}, ${y - height / 2})`}>
@@ -211,6 +214,7 @@ function App() {
           height={canvasHeight+"in"}
           viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
         >
+          <Grid canvasWidth={canvasWidth} canvasHeight={canvasHeight} />
           {shapes.map((shape, i) => {
             const x = shape.params[0];
             const y = shape.params[1];
@@ -353,6 +357,38 @@ function ShapeSelector({ selectedShapeTypeIndex, shapeDefs, onChange }) {
         ))}
       </div>
     </div>
+  );
+}
+
+function Grid({canvasWidth, canvasHeight}) {
+  const lines = [];
+  for (let x = 0; x < canvasWidth; x += GRID_UNIT) {
+      lines.push(
+        <line
+          key={'x' + x}
+          x1={x}
+          y1={0}
+          x2={x}
+          y2={canvasHeight}
+        />
+      );
+  }
+  for (let y = 0; y < canvasHeight; y += GRID_UNIT) {
+      lines.push(
+        <line
+          key={'y' + y}
+          x1={0}
+          y1={y}
+          x2={canvasWidth}
+          y2={y}
+        />
+      );
+  }
+
+  return (
+    <g stroke={GRID_COLOR} strokeWidth={0.01}>
+      {lines}
+    </g>
   );
 }
 
