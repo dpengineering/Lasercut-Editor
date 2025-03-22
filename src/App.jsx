@@ -214,7 +214,7 @@ function App() {
           height={canvasHeight+"in"}
           viewBox={`0 0 ${canvasWidth} ${canvasHeight}`}
         >
-          <Grid canvasWidth={canvasWidth} canvasHeight={canvasHeight} />
+          {!isExporting && <Grid canvasWidth={canvasWidth} canvasHeight={canvasHeight} />}
           {shapes.map((shape, i) => {
             const x = shape.params[0];
             const y = shape.params[1];
